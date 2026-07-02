@@ -1,0 +1,57 @@
+{
+  "demo_user": {
+    "history": [
+      "laptops under 50000",
+      "laptops under 50000",
+      "phones",
+      "phone under 50000",
+      "phone under 50000",
+      "phone under 50000"
+    ],
+    "category": "electronics",
+    "budget": 50000.0
+  },
+  "testuser": {
+    "history": [
+      "best phones under 20000"
+    ],
+    "category": "electronics",
+    "budget": 20000.0
+  },
+  "testuser2": {
+    "history": [
+      "best phones under 20000"
+    ],
+    "category": "electronics",
+    "budget": 20000.0
+  },
+  "testuser3": {
+    "history": [
+      "best phones under 20000"
+    ],
+    "category": "electronics",
+    "budget": 20000.0
+  },
+  "testuser4": {
+    "history": [
+      "best phones under 20000"
+    ],
+    "category": "electronics",
+    "budget": 20000.0
+  },
+  "testuser-run": {
+    "history": [
+      "best phones under 20000",
+      "best phones under 20000"
+    ],
+    "category": "electronics",
+    "budget": 20000.0
+  },
+  "testuser-run2": {
+    "history": [
+      "best phones under 20000"
+    ],
+    "category": "electronics",
+    "budget": 20000.0
+  }
+}

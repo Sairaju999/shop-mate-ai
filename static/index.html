@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMate AI - Intelligent Recommendations</title>
+    <meta name="description" content="ShopMate AI: Personalized product recommendations using real-time trends and AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🛍️</span>
+                <h1>ShopMate <span>AI</span></h1>
+            </div>
+            <p class="tagline">Personalized retail recommendations powered by Gemini</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Left Panel: User Profile & Memory -->
+            <aside class="memory-panel glass-panel">
+                <h2>User Profile</h2>
+                <div class="form-group">
+                    <label for="user-id">User ID</label>
+                    <div class="input-group">
+                        <input type="text" id="user-id" placeholder="Enter User ID (e.g. u123)" value="demo_user">
+                        <button id="load-memory-btn" class="btn-icon" title="Load Memory">🔄</button>
+                    </div>
+                </div>
+                
+                <div class="memory-details" id="memory-details">
+                    <div class="memory-stat">
+                        <span class="stat-label">Category</span>
+                        <span class="stat-value" id="mem-category">Not determined</span>
+                    </div>
+                    <div class="memory-stat">
+                        <span class="stat-label">Budget</span>
+                        <span class="stat-value" id="mem-budget">Not specified</span>
+                    </div>
+                    
+                    <div class="history-section">
+                        <h3>Recent Queries</h3>
+                        <ul id="mem-history" class="history-list">
+                            <li class="empty-state">No history yet</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Manual Update Form -->
+                <div class="update-memory-section">
+                    <h3>Update Preferences</h3>
+                    <div class="form-group">
+                        <label for="update-category">Category</label>
+                        <input type="text" id="update-category" placeholder="e.g. Electronics">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-budget">Budget (₹)</label>
+                        <input type="number" id="update-budget" placeholder="e.g. 50000">
+                    </div>
+                    <button id="update-memory-btn" class="btn-secondary">Update Profile</button>
+                </div>
+            </aside>
+
+            <!-- Right Panel: Search & Recommendations -->
+            <section class="recommendation-panel glass-panel">
+                <div class="search-section">
+                    <h2>Find Products</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-query" placeholder="What are you looking for today? (e.g. best gaming laptops under 1 lakh)">
+                        <button id="search-btn" class="btn-primary">
+                            <span class="btn-text">Search</span>
+                            <span class="loader hidden" id="search-loader"></span>
+                        </button>
+                    </div>
+                    <div id="error-message" class="error-message hidden"></div>
+                </div>
+
+                <div class="results-section">
+                    <div id="welcome-state" class="state-container">
+                        <div class="state-icon">✨</div>
+                        <h3>Ask ShopMate AI</h3>
+                        <p>Get personalized product recommendations based on your preferences and real-time trends.</p>
+                    </div>
+                    
+                    <div id="loading-state" class="state-container hidden">
+                        <div class="pulse-loader"></div>
+                        <h3>Analyzing Trends...</h3>
+                        <p>Scraping web data and generating AI recommendations.</p>
+                    </div>
+
+                    <div id="results-content" class="results-content hidden">
+                        <div class="results-header">
+                            <h3>Recommendations</h3>
+                            <span class="badge" id="products-analyzed">0 products analyzed</span>
+                        </div>
+                        <div id="recommendations-markdown" class="markdown-body">
+                            <!-- Markdown content injected here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
